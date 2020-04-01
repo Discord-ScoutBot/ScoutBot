@@ -8,11 +8,7 @@ function getRandomInt(max) {
 
 function flip(odds){
   coin = getRandomInt(odds);
-  if(coin > 5){
-    return true;
-  } else {
-    return false;
-  }
+  return coin;
 }
 
 client.on('ready', () => {
@@ -33,11 +29,28 @@ if (message.content === "|iq") {
   message.channel.send(`Hmm... let me guess your IQ <@${message.author.id}>.`)
   message.reply(`your IQ is ${getRandomInt(250)}!`);
 }
-if (message.content === "|flip"){
-  if(flip(10)){
-    message.channel.send('Heads!')
+if (message.content === "|flip" || "flip 2"){
+  if(message.content === "|flip 2")
+    if(flip(10) > 5){
+      message.channel.send('Heads!')
+      if(flip(10 > 5)){
+        message.channel.send('Heads!')
+      } else {
+        message.channel.send('Tails!')
+      }
+    } else {
+      message.channel.send('Tails!')
+      if(flip(10) > 5){
+        message.channel.send('Heads!')
+      } else {
+        message.channel.send('Tails!')
+      }
   } else {
-    message.channel.send('Tails!')
+    if(flip(10) > 5){
+      message.channel.send('Heads!')
+    } else {
+      message.channel.send('Tails!')
+    }
   }
 }
   
