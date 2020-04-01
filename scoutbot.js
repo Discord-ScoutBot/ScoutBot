@@ -7,8 +7,8 @@ function getRandomInt(max) {
 }
 
 function flip(){
-  coin = Math.round(Math.random());
-  if(coin === 0){
+  coin = getRandomInt(11);
+  if(coin > 5){
     return true;
   } else {
     return false;
