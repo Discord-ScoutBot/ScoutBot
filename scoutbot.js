@@ -12,7 +12,7 @@ function flip(odds){
 }
 
 client.on('ready', () => {
-    client.user.setPresence({ activity: { name: 'scoutbot! reborn!' }, status: 'idle' })
+    client.user.setPresence({ activity: { name: 'scoutbot! reborn!' }, status: 'dnd' })
     console.log(`Logged in as ${client.user.tag}!`);
   }); 
   client.on("message", message => {
