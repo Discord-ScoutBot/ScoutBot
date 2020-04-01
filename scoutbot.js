@@ -16,10 +16,10 @@ client.on('ready', () => {
 }
 // funny stuff hahahaha
 if (message.content.startsWith("|iq")) {
-  console.log('Somebody just used the iq command.')
   function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
   }
+  message.channel.send(`Hmm... let me guess your IQ ${message.author.username}.`)
   message.reply(`your IQ is ${getRandomInt(100)}!`);
 }
 // misc stuff
