@@ -34,7 +34,7 @@ if (message.content === "|iq") {
   message.reply(`your IQ is ${getRandomInt(250)}!`);
 }
 if (message.content === "|flip"){
-  if(flip(11)){
+  if(flip(10)){
     message.channel.send('Heads!')
   } else {
     message.channel.send('Tails!')
