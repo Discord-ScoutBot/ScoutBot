@@ -27,7 +27,7 @@ client.on('ready', () => {
 if (message.content === '|stats')
 message.channel.send('Gathering stats...')
   .then(msg => {
-    msg.edit(`Current ScoutBot stats - Ping:  ${msg.createdTimestamp - message.createdTimestamp}ms - Uptime: ${client.uptime * .001} seconds - Currently serving ${str(client.guilds.size)} servers.`)
+    msg.edit(`Current ScoutBot stats - Ping:  ${msg.createdTimestamp - message.createdTimestamp}ms - Uptime: ${client.uptime * .001} seconds - Currently serving ${toString(client.guilds.size)} servers.`)
   })
 // funny stuff hahahaha
 if (message.content === "|iq") {
