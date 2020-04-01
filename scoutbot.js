@@ -15,7 +15,13 @@ client.on('ready', () => {
     });
 }
 // funny stuff hahahaha
-
+if (message.content.startsWith("|iq")) {
+  console.log('Somebody just used the iq command.')
+  function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+  }
+  message.reply(`your IQ is ${getRandomInt(100)}!`);
+}
 // misc stuff
 const pfpEmbed = {
 	title: `${message.author.username}'s profile picture`,
