@@ -33,7 +33,7 @@ if (message.content === "|iq") {
   message.channel.send(`Hmm... let me guess your IQ <@${message.author.id}>.`)
   message.reply(`your IQ is ${getRandomInt(250)}!`);
 }
-if (message.content === "|coin"){
+if (message.content === "|flip"){
   if(flip === true){
     message.channel.send('Heads!')
   } else {
