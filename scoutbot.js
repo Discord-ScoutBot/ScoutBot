@@ -6,8 +6,8 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-function flip(){
-  coin = getRandomInt(11);
+function flip(odds){
+  coin = getRandomInt(odds);
   if(coin > 5){
     return true;
   } else {
@@ -34,7 +34,7 @@ if (message.content === "|iq") {
   message.reply(`your IQ is ${getRandomInt(250)}!`);
 }
 if (message.content === "|flip"){
-  if(flip === true){
+  if(flip(11)){
     message.channel.send('Heads!')
   } else {
     message.channel.send('Tails!')
