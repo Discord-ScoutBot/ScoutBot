@@ -24,6 +24,11 @@ client.on('ready', () => {
         msg.edit(`Current Ping: ${msg.createdTimestamp - message.createdTimestamp}ms.`);
     });
 }
+if (message.content === '|stats')
+message.channel.send('Gathering stats...')
+  .then(msg => {
+    msg.edit(`Current ScoutBot stats - Ping:  ${msg.createdTimestamp - message.createdTimestamp}ms - Uptime: ${client.uptime * .001} seconds - Currently serving ${client.guilds.size} servers.`)
+  })
 // funny stuff hahahaha
 if (message.content === "|iq") {
   message.channel.send(`Hmm... let me guess your IQ <@${message.author.id}>.`)
