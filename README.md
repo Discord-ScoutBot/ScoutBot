@@ -1,2 +1,2 @@
-# ScoutBot-Rewrite
-a new era for scoutbot
+# ScoutBot-Remake
+A remake of the ScoutBot, from the ground up.
