@@ -15,12 +15,12 @@ client.on('ready', () => {
     });
 }
 // funny stuff hahahaha
-if (message.content.startsWith("|iq")) {
+if (message.content === "|iq") {
   function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
   }
-  message.channel.send(`Hmm... let me guess your IQ ${message.author.username}.`)
-  message.reply(`your IQ is ${getRandomInt(100)}!`);
+  message.channel.send(`Hmm... let me guess your IQ <@${message.author.id}>.`)
+  message.reply(`your IQ is ${getRandomInt(300)}!`);
 }
 // misc stuff
 const pfpEmbed = {
