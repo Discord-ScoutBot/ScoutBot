@@ -34,24 +34,24 @@ if (message.content === "|iq") {
   message.channel.send(`Hmm... let me guess your IQ <@${message.author.id}>.`)
   message.reply(`your IQ is ${getRandomInt(250)}!`);
 }
-if (message.content === "|flip" || "|flip 2"){
+if (message.content === "|flip" || "|flip 2" || "flip 1"){
   if(message.content === "|flip 2"){
     if(flip(10) > 5){
-      message.channel.send('Heads!')
+      message.channel.send('Your first flip is Heads!')
       if(flip(10) > 5){
-        message.channel.send('Heads!')
+        message.channel.send('Your second flip is Heads!')
       } else {
-        message.channel.send('Tails!')
+        message.channel.send('Your second flip is Tails!')
       }
     } else {
-      message.channel.send('Tails!')
+      message.channel.send('Your first flip is Tails!')
       if(flip(10) > 5){
-        message.channel.send('Heads!')
+        message.channel.send('Your second flip is Heads!')
         } else {
-        message.channel.send('Tails!')
+        message.channel.send('Your second flip is Tails!')
       }
     }
-  } else if(message.content === "|flip") {
+  } else if(message.content === "|flip" || "|flip 1") {
     if(flip(10) > 5){
       message.channel.send('Heads!')
     } else {
