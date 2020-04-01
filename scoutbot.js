@@ -6,7 +6,7 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
   }); 
   client.on("message", message => {
-
+  // stats n stuff woooooo
   if (message.content === '|ping') {
     if (message.author.bot) return;
     message.channel.send('Checking ping!...')
@@ -14,6 +14,9 @@ client.on('ready', () => {
         msg.edit(`Current Ping: ${msg.createdTimestamp - message.createdTimestamp}ms.`);
     });
 }
+// funny stuff hahahaha
+
+// misc stuff
 const pfpEmbed = {
 	title: `${message.author.username}'s profile picture`,
 	image: {
