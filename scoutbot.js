@@ -29,8 +29,8 @@ if (message.content === "|iq") {
   message.channel.send(`Hmm... let me guess your IQ <@${message.author.id}>.`)
   message.reply(`your IQ is ${getRandomInt(250)}!`);
 }
-if (message.content === "|flip" || "flip 2"){
-  if(message.content === "|flip 2")
+if (message.content === "|flip 1" || "flip 2"){
+  if(message.content === "|flip 2"){
     if(flip(10) > 5){
       message.channel.send('Heads!')
       if(flip(10 > 5)){
@@ -42,9 +42,10 @@ if (message.content === "|flip" || "flip 2"){
       message.channel.send('Tails!')
       if(flip(10) > 5){
         message.channel.send('Heads!')
-      } else {
+        } else {
         message.channel.send('Tails!')
       }
+    }
   } else {
     if(flip(10) > 5){
       message.channel.send('Heads!')
