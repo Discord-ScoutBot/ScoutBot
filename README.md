@@ -1,2 +1,2 @@
 # ScoutBot-Remake
-A remake of the ScoutBot, from the ground up.
+A remake of ScoutBot, from the ground up.
