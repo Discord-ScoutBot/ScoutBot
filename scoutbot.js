@@ -31,7 +31,7 @@ client.on('ready', () => {
 // funny stuff hahahaha
 if (message.content === "|iq") {
   message.channel.send(`Hmm... let me guess your IQ <@${message.author.id}>.`)
-  message.reply(`your IQ is ${getRandomInt(263)}!`);
+  message.reply(`your IQ is ${getRandomInt(250)}!`);
 }
 if (message.content === "|coin"){
   if(flip){
