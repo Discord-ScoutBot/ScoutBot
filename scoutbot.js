@@ -7,7 +7,7 @@ function getRandomInt(max) {
 }
 
 function flip(){
-  coin = getRandomInt(2);
+  coin = Math.random();
   if(coin === 0){
     return true;
   } else {
