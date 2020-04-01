@@ -38,7 +38,7 @@ if (message.content === "|flip 1" || "flip 2"){
   if(message.content === "|flip 2"){
     if(flip(10) > 5){
       message.channel.send('Heads!')
-      if(flip(10 > 5)){
+      if(flip(10) > 5){
         message.channel.send('Heads!')
       } else {
         message.channel.send('Tails!')
