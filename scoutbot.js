@@ -24,6 +24,10 @@ client.on('ready', () => {
         msg.edit(`Current Ping: ${msg.createdTimestamp - message.createdTimestamp}ms.`);
     });
 }
+if (message.content === '|help') {
+  if (message.author.bot) return;
+  message.channel.send('The list of commands can be found at https://scoutbot.spikeyscout.xyz.')
+}
 if (message.content === '|stats')
 message.channel.send('Gathering stats...')
   .then(msg => {
