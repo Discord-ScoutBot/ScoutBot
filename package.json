@@ -1,0 +1,30 @@
+{
+  "name": "scoutbot",
+  "version": "1.0.0",
+  "description": "A multipurpose bot, with features being added whenever scoutie feels",
+  "main": "scoutbot.js",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "opusscript": "^0.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Discord-ScoutBot/ScoutBot.git"
+  },
+  "keywords": [
+    "discordbot",
+    "js",
+    "discord",
+    "bot"
+  ],
+  "author": "spikeyscout",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Discord-ScoutBot/ScoutBot/issues"
+  },
+  "homepage": "https://github.com/Discord-ScoutBot/ScoutBot#readme"
+}
