@@ -1,2 +1,2 @@
-# ScoutBot-Remake
-A remake of ScoutBot, from the ground up.
+# ScoutBot
+ScoutBot - A multipurpose "whatever-the-hell-scoutie-adds" bot!
