@@ -75,9 +75,18 @@ if (message.content === "|flip" || "|flip 2"){
   
 // misc stuff
 const pfpEmbed = {
-	title: `${message.author.username}'s profile picture`,
+  title: `${message.author.username}'s profile picture`,
+  fields: {
+    name: `Link`,
+    value: `${message.author.avatarURL({ format: 'png', dynamic: true })}`
+  },
 	image: {
 		url: message.author.avatarURL({ format: 'png', dynamic: true, size: 1024 }),
+  },
+  timestamp: new Date(),
+  footer: {
+    icon_url: message.author.avatarURL(),
+    text: `${message.author.username}'s profile picture`
   },
 };
     if (message.content === '|pfp') {
