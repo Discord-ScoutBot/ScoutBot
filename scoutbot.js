@@ -10,7 +10,6 @@ function flip(odds){
   coin = getRandomInt(odds);
   return coin;
 }
-
 client.on('ready', () => {
     client.user.setPresence({ activity: { name: 'scoutbot! reborn!' }, status: 'dnd' })
     console.log(`Logged in as ${client.user.tag}!`);
@@ -26,17 +25,27 @@ client.on('ready', () => {
 }
 if (message.content === '|help') {
   if (message.author.bot) return;
-  message.channel.send('The list of commands can be found at https://scoutbot.spikeyscout.xyz.')
+  message.channel.send('There is no help page yet, however if you know what you are doing and what you are looking for you can go to <https://github.com/Discord-ScoutBot/ScoutBot/blob/master/scoutbot.js> and look for commands there.')
 }
 if (message.content === '|stats')
 message.channel.send('Gathering stats...')
   .then(msg => {
-    msg.edit(`Current ScoutBot stats - Ping:  ${msg.createdTimestamp - message.createdTimestamp}ms - Uptime: ${client.uptime * .001} seconds - Currently serving ${toString(client.guilds.size)} servers.`)
+    msg.edit(`Current ScoutBot stats - Ping:  ${msg.createdTimestamp - message.createdTimestamp}ms - Uptime: ${client.uptime * .001} seconds - Currently serving ${client.guilds.cache.size} servers and ${client.users.cache.size} users.`)
   })
 // funny stuff hahahaha
 if (message.content === "|iq") {
-  message.channel.send(`Hmm... let me guess your IQ <@${message.author.id}>.`)
-  message.reply(`your IQ is ${getRandomInt(250)}!`);
+  var iq = getRandomInt(250);
+  message.reply(`your IQ is ${iq}!`);
+  if (iq < 100)
+   if (iq > 50)
+   message.reply(`a bit low... but I guess it's not too terrible?`)
+   else
+   message.reply(`ouch.`)
+  else
+    if (iq > 175)
+    message.channel.send(`Wow <@${message.author.id}>, you're pretty smart!`)
+    else
+    message.reply(`that's pretty good!`)
 }
 if (message.content === "|flip" || "|flip 2"){
   if(message.content === "|flip 2"){
