@@ -39,17 +39,11 @@ if (message.content === "|iq") {
   if (iq < 100)
    if (iq > 50)
    message.reply(`a bit low... but I guess it's not too terrible?`)
-   else
-    if (iq = 0)
-    message.reply('how?')
-    else
-    message.reply(`ouch.`)
+  else
+   message.reply(`ouch.`)
   else
     if (iq > 175)
-      if (iq = 250)
-      message.reply("what? Explain your methods.")
-      else
-      message.channel.send(`Wow <@${message.author.id}>, you're pretty smart!`)
+    message.channel.send(`Wow <@${message.author.id}>, you're pretty smart!`)
     else
     message.reply(`that's pretty good!`)
 }
@@ -83,16 +77,17 @@ if (message.content === "|flip" || "|flip 2"){
 const pfpEmbed = {
 	title: `${message.author.username}'s profile picture`,
 	image: {
-		url: message.author.displayAvatarURL(),
-	},
+		url: message.author.avatarURL({ format: 'png', dynamic: true, size: 1024 }),
+  },
 };
     if (message.content === '|pfp') {
       message.reply("here is your profile picture!")
       message.channel.send({embed: pfpEmbed });
     }
-
+if (message.content === '|invite') {
+      message.channel.send('The invite link is <https://discord.com/oauth2/authorize?client_id=439205929972531203&scope=bot&permissions=238935233>.')
+    }
 });
-if (message.content === '|invite')
-  message.channel.send("The bot's invite link is <")
+
   client.login(config.token)
 // no token for you, buddy
