@@ -26,5 +26,9 @@
   "bugs": {
     "url": "https://github.com/Discord-ScoutBot/ScoutBot/issues"
   },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
+  },
   "homepage": "https://github.com/Discord-ScoutBot/ScoutBot#readme"
 }
+
