@@ -40,10 +40,16 @@ if (message.content === "|iq") {
    if (iq > 50)
    message.reply(`a bit low... but I guess it's not too terrible?`)
    else
-   message.reply(`ouch.`)
+    if (iq = 0)
+    message.reply('how?')
+    else
+    message.reply(`ouch.`)
   else
     if (iq > 175)
-    message.channel.send(`Wow <@${message.author.id}>, you're pretty smart!`)
+      if (iq = 250)
+      message.reply("what? Explain your methods.")
+      else
+      message.channel.send(`Wow <@${message.author.id}>, you're pretty smart!`)
     else
     message.reply(`that's pretty good!`)
 }
@@ -86,5 +92,7 @@ const pfpEmbed = {
     }
 
 });
+if (message.content === '|invite')
+  message.channel.send("The bot's invite link is <")
   client.login(config.token)
 // no token for you, buddy
