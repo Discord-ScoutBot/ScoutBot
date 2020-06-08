@@ -11,20 +11,16 @@ function flip(odds){
   return coin;
 }
 client.on('ready', () => {
-    client.user.setPresence({ activity: { name: 'scoutbot! reborn!' }, status: 'dnd' })
+    client.user.setPresence({ activity: { name: 'ロボット' }, status: 'online' })
     console.log(`Logged in as ${client.user.tag}!`);
   }); 
   client.on("message", message => {
   // stats n stuff woooooo
-  if (message.content === '|ping') {
-    if (message.author.bot) return;
-    message.channel.send('Checking ping!...')
-    .then(msg => {
-        msg.edit(`Current Ping: ${msg.createdTimestamp - message.createdTimestamp}ms.`);
-    });
+if (message.content === '|ping') {
+    message.channel.send(`Ping test one!`).then((sentMessage) => sentMessage.edit(`That first test returned ${sentMessage.createdTimestamp - message.createdTimestamp}ms.`))
+    message.channel.send(`Ping test two`).then((sentMessage) => sentMessage.edit(`That second test returned ${(sentMessage.createdTimestamp - message.createdTimestamp) - 115}ms.`)) // -115 to compensate for the time it takes to send + edit another message
 }
 if (message.content === '|help') {
-  if (message.author.bot) return;
   message.channel.send('There is no help page yet, however if you know what you are doing and what you are looking for you can go to <https://github.com/Discord-ScoutBot/ScoutBot/blob/master/scoutbot.js> and look for commands there.')
 }
 if (message.content === '|stats')
@@ -40,7 +36,7 @@ if (message.content === "|iq") {
    if (iq > 50)
    message.reply(`a bit low... but I guess it's not too terrible?`)
   else
-   message.reply(`ouch.`)
+   message.reply(`oh dear...`)
   else
     if (iq > 175)
     message.channel.send(`Wow <@${message.author.id}>, you're pretty smart!`)
@@ -75,9 +71,9 @@ if (message.content === "|flip" || "|flip 2"){
   
 // misc stuff
 const pfpEmbed = {
-  title: `${message.author.username}'s profile picture`,
+  title: `${message.author.username}'s profile picture.`,
   fields: {
-    name: `Link`,
+    name: `Link:`,
     value: `${message.author.avatarURL({ format: 'png', dynamic: true })}`
   },
 	image: {
@@ -86,7 +82,7 @@ const pfpEmbed = {
   timestamp: new Date(),
   footer: {
     icon_url: message.author.avatarURL(),
-    text: `${message.author.username}'s profile picture`
+    text: `${message.author.username}'s profile picture.`
   },
 };
     if (message.content === '|pfp') {
