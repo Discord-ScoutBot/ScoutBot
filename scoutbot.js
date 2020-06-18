@@ -2,31 +2,35 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
 
+// time and date stuff
+var date = new Date();
+let dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: `2-digit`, minute: `2-digit`, second: `2-digit`, timeZoneName: `long`, timeZone: 'America/New_York' };
+// random rolling
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
-
+// for coin flip
 function flip(odds){
   coin = getRandomInt(odds);
   return coin;
 }
 client.on('ready', () => {
-    client.user.setPresence({ activity: { name: 'ロボット' }, status: 'online' })
+    client.user.setPresence({ activity: { name: `with ${client.users.cache.size} people and ${client.guilds.cache.size} servers!` }, status: 'online' })
     console.log(`Logged in as ${client.user.tag}!`);
   }); 
   client.on("message", message => {
   // stats n stuff woooooo
 if (message.content === '|ping') {
     message.channel.send(`Ping test one!`).then((sentMessage) => sentMessage.edit(`That first test returned ${sentMessage.createdTimestamp - message.createdTimestamp}ms.`))
-    message.channel.send(`Ping test two`).then((sentMessage) => sentMessage.edit(`That second test returned ${(sentMessage.createdTimestamp - message.createdTimestamp) - 115}ms.`)) // -115 to compensate for the time it takes to send + edit another message
+    message.channel.send(`Ping test two`).then((sentMessage) => sentMessage.edit(`That second test returned ${(sentMessage.createdTimestamp - message.createdTimestamp) - 115}ms.`)) // -115 to compensate for the time it takes to send + edit another message, ill make it better later
 }
 if (message.content === '|help') {
-  message.channel.send('There is no help page yet, however if you know what you are doing and what you are looking for you can go to <https://github.com/Discord-ScoutBot/ScoutBot/blob/master/scoutbot.js> and look for commands there.')
+  message.channel.send('As there is no help page, you must look through the source code (<https://github.com/Discord-ScoutBot/ScoutBot/blob/master/scoutbot.js>) and find them yourself.') // todo - actually make help page maybe????
 }
 if (message.content === '|stats')
 message.channel.send('Gathering stats...')
   .then(msg => {
-    msg.edit(`Current ScoutBot stats - Ping:  ${msg.createdTimestamp - message.createdTimestamp}ms - Uptime: ${client.uptime * .001} seconds - Currently serving ${client.guilds.cache.size} servers and ${client.users.cache.size} users.`)
+    msg.edit(`Stats: \n Ping: ${msg.createdTimestamp - message.createdTimestamp}ms \n Uptime: ${client.uptime * .001} seconds \n ${client.guilds.cache.size} servers \n ${client.users.cache.size} users`)
   })
 // funny stuff hahahaha
 if (message.content === "|iq") {
@@ -71,7 +75,7 @@ if (message.content === "|flip" || "|flip 2"){
   
 // misc stuff
 const pfpEmbed = {
-  title: `${message.author.username}'s profile picture.`,
+  title: `${message.author.username}'s profile picture`,
   fields: {
     name: `Link:`,
     value: `${message.author.avatarURL({ format: 'png', dynamic: true })}`
@@ -82,7 +86,7 @@ const pfpEmbed = {
   timestamp: new Date(),
   footer: {
     icon_url: message.author.avatarURL(),
-    text: `${message.author.username}'s profile picture.`
+    text: `${message.author.username}'s profile picture`
   },
 };
     if (message.content === '|pfp') {
@@ -92,7 +96,9 @@ const pfpEmbed = {
 if (message.content === '|invite') {
       message.channel.send('The invite link is <https://discord.com/oauth2/authorize?client_id=439205929972531203&scope=bot&permissions=238935233>.')
     }
+if (message.content === '|time') {
+    message.channel.send(`The time is ${date.toLocaleString('en-GB', dateOptions)}`) // todo - make it so you can put in your locale/tz
+}
 });
 
   client.login(config.token)
-// no token for you, buddy

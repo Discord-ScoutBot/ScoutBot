@@ -5,7 +5,8 @@
   "main": "scoutbot.js",
   "dependencies": {
     "discord.js": "^12.2.0",
-    "opusscript": "^0.0.7"
+    "opusscript": "^0.0.7",
+    "osu": "^3.0.0-0"
   },
   "devDependencies": {},
   "scripts": {
@@ -27,8 +28,7 @@
     "url": "https://github.com/Discord-ScoutBot/ScoutBot/issues"
   },
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/"
   },
   "homepage": "https://github.com/Discord-ScoutBot/ScoutBot#readme"
 }
-
