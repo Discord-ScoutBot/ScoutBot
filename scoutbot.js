@@ -22,7 +22,8 @@ client.on('ready', () => {
   // stats n stuff woooooo
 if (message.content === '|ping') {
     message.channel.send(`Ping test one!`).then((sentMessage) => sentMessage.edit(`That first test returned ${sentMessage.createdTimestamp - message.createdTimestamp}ms.`))
-    message.channel.send(`Ping test two`).then((sentMessage) => sentMessage.edit(`That second test returned ${(sentMessage.createdTimestamp - message.createdTimestamp) - 115}ms.`)) // -115 to compensate for the time it takes to send + edit another message, ill make it better later
+    message.channel.send(`Ping test two`).then((sentMessage) => sentMessage.edit(`That second test returned ${(sentMessage.createdTimestamp - message.createdTimestamp) - 115}ms.`)) // -115 to compensate for the time it takes to send + edit another message
+																						     // TODO: make this better
 }
 if (message.content === '|help') {
   message.channel.send('As there is no help page, you must look through the source code (<https://github.com/Discord-ScoutBot/ScoutBot/blob/master/scoutbot.js>) and find them yourself.') // todo - actually make help page maybe????
